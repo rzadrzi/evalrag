@@ -117,6 +117,7 @@ High-level architecture:
    | (e.g. Qdrant)  |    |  (e.g. Postgres)|  |  (optional)  |
    +----------------+    +----------------+   +--------------+
 
+```
 
 ## Project Structure
 
@@ -162,6 +163,4 @@ project layout
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-
-
 ```
