@@ -117,3 +117,51 @@ High-level architecture:
    | (e.g. Qdrant)  |    |  (e.g. Postgres)|  |  (optional)  |
    +----------------+    +----------------+   +--------------+
 
+
+## Project Structure
+
+project layout
+
+``` text
+.
+├── backend
+│   ├── app
+│   │   ├── api
+│   │   │   ├── routes_documents.py
+│   │   │   ├── routes_rag.py
+│   │   │   └── routes_eval.py
+│   │   ├── core
+│   │   │   ├── config.py
+│   │   │   └── logging.py
+│   │   ├── ingestion
+│   │   │   ├── loaders.py
+│   │   │   └── chunkers.py
+│   │   ├── rag
+│   │   │   ├── retriever.py
+│   │   │   ├── generator.py
+│   │   │   └── prompts.py
+│   │   ├── eval
+│   │   │   ├── datasets.py
+│   │   │   ├── judge.py
+│   │   │   └── metrics.py
+│   │   ├── models
+│   │   │   ├── db_models.py
+│   │   │   └── schemas.py
+│   │   └── main.py
+│   └── tests
+│       ├── test_rag.py
+│       ├── test_eval.py
+│       └── test_api.py
+├── frontend
+│   └── dashboard
+│       └── app.py   # e.g. Streamlit or React app
+├── configs
+│   ├── app.yaml
+│   ├── prompts.yaml
+│   └── eval.yaml
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
+
+
+```
