@@ -1,1 +1,3 @@
-from config 
+from config import config
+
+print(config)
