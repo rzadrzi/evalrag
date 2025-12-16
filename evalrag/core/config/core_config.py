@@ -9,6 +9,7 @@ import yaml
 
 BASE_DIR = Path(__file__).resolve().parents[3]
 CONFIG_FILE = BASE_DIR / "configs" / "core.yaml"
+DATA_DIR = BASE_DIR / "data"
 
 
 def _load_yaml_config() -> dict:
@@ -59,6 +60,7 @@ class EvalConfig:
 class IngestionConfig:
     default_chunk_size: int = _get("ingestion.default_chunk_size", 800)
     default_chunk_overlap: int = _get("ingestion.default_chunk_overlap", 100)
+    data_dir: str = str(DATA_DIR)
 
 
 @dataclass
