@@ -252,6 +252,7 @@ dependencies = [
     { name = "langchain-text-splitters" },
     { name = "pypdf" },
     { name = "pyyaml" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -266,6 +267,7 @@ requires-dist = [
     { name = "langchain-text-splitters", specifier = ">=1.0.0" },
     { name = "pypdf", specifier = ">=6.4.2" },
     { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "uvicorn", specifier = ">=0.38.0" },
 ]
 
 [[package]]
