@@ -37,19 +37,22 @@ def _get(path: str, default=None) -> Any:
 class RagConfig:
     top_k: int = _get("rag.top_k", 5)
     max_context_tokens: int = _get("rag.max_context_tokens", 2000)
-    model_name: str = _get(
-        "rag.model_name", os.getenv("RAG_MODEL_NAME", "gpt-4.1-mini")
-    )
-    embedding_model: str = _get(
-        "rag.embedding_model", os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
-    )
+    provider_name = _get("rag.provider_name", os.getenv("PROVIDER_NAME", "HF"))
+    # model_name: str = _get(
+    #    "rag.model_name", os.getenv("RAG_MODEL_NAME", "gpt-4.1-mini")
+    # )
+    # embedding_model: str = _get(
+    #    "rag.embedding_model", os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
+    # )
 
 
 @dataclass
 class EvalConfig:
-    judge_model: str = _get(
-        "eval.judge_model", os.getenv("JUDGE_MODEL_NAME", "gpt-4.1-mini")
-    )
+    judge_provider: str = _get("eval.judge_provider", os.getenv("JUDGE_PROVIDER", "HF"))
+
+    # judge_model: str = _get(
+    #    "eval.judge_model", os.getenv("JUDGE_MODEL_NAME", "gpt-4.1-mini")
+    # )
     correctness_weight: float = _get("eval.correctness_weight", 0.5)
     faithfulness_weight: float = _get("eval.faithfulness_weight", 0.3)
     context_relevance_weight: float = _get("eval.context_relevance_weight", 0.2)
