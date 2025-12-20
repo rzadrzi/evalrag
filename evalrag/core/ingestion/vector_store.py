@@ -5,7 +5,8 @@ import faiss
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 
-def vector_store(embeddings, splits:List[Document]):
+
+def vector_store(embeddings, splits: List[Document], vector_store_path: str):
     embedding_dim = len(embeddings.embed_query("hello world"))
     index = faiss.IndexFlatL2(embedding_dim)
 
@@ -16,4 +17,5 @@ def vector_store(embeddings, splits:List[Document]):
         index_to_docstore_id={},
     )
     store.add_documents(splits)
-    store.save_local("../faiss_indexing")
+    # store.save_local("../faiss_indexing")
+    store.save_local(vector_store_path)
