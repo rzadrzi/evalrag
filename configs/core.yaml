@@ -13,5 +13,6 @@ eval:
   faithfulness_threshold: 3.5
 
 ingestion:
+  provider_name: "HF"
   default_chunk_size: 900
   default_chunk_overlap: 120
