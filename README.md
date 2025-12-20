@@ -1,6 +1,5 @@
 # EvalRAG: Evaluation-Aware Retrieval-Augmented Generation System
 
-![Static Badge](https://img.shields.io/badge/langchain)
 ![Static Badge](https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 
 EvalRAG is a **production-oriented Retrieval-Augmented Generation (RAG) system** with a built-in **evaluation framework**.  
