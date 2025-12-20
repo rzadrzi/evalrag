@@ -1,7 +1,16 @@
 # main.py
-#
-from core.config import load_config
+from typing import Union
+
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-def print_config():
-    print(load_config())
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}
