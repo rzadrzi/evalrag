@@ -3,7 +3,7 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 import os
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 import yaml
 
 
@@ -22,7 +22,7 @@ def _load_yaml_config() -> dict:
 _yaml_cfg = _load_yaml_config()
 
 
-def _get(path: str, default=None) -> Dict[str, int | str | None]:
+def _get(path: str, default=None) -> Dict[str, Any]:
     parts = path.split(".")
     cur = _yaml_cfg
     for p in parts:
