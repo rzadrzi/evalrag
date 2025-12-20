@@ -6,7 +6,7 @@ from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 
 
-def vector_store(embeddings, splits: List[Document], vector_store_path: str):
+def vector_store_(embeddings, splits: List[Document], vector_store_path: str):
     embedding_dim = len(embeddings.embed_query("hello world"))
     index = faiss.IndexFlatL2(embedding_dim)
 
