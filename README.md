@@ -1,5 +1,7 @@
 # EvalRAG: Evaluation-Aware Retrieval-Augmented Generation System
 
+![Static Badge](https://img.shields.io/badge/:badgeContent)
+
 EvalRAG is a **production-oriented Retrieval-Augmented Generation (RAG) system** with a built-in **evaluation framework**.  
 It not only answers questions using your domain documents, but also **measures** how good those answers are in terms of:
 
