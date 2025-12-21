@@ -1,4 +1,5 @@
 # loader.py
+import os
 import codecs
 import chardet
 from typing import List
@@ -60,5 +61,12 @@ def pdf_loader(filename: str) -> List[Document]:
     return docs
 
 
-def load_all_pdf(path) -> List[List[Document]]:
-    pass
+def load_all_pdf(path: str) -> List[List[Document]]:
+    all_docs = []
+
+    all_files = os.listdir(path=path)
+    for i in all_files:
+        if get_file_extention(filename=i) == "pdf":
+            all_docs.append(pdf_loader(i))
+
+    return all_docs
