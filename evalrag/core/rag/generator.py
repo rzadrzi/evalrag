@@ -3,7 +3,7 @@
 import time
 from typing import Dict, Any
 
-from rag import Retriever, build_context_block, build_rag_prompt
+from rag import Retriever, build_rag_prompt
 
 
 class RAGGenerator:
