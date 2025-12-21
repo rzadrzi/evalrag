@@ -54,7 +54,11 @@ def get_file_extention(filename: str) -> str:
     return filename.split(".")[-1].lower()
 
 
-def pdf_loader(path) -> List[Document]:
-    loader = PyPDFLoader(path)
+def pdf_loader(filename: str) -> List[Document]:
+    loader = PyPDFLoader(filename)
     docs = loader.load()
     return docs
+
+
+def load_all_pdf(path) -> List[List[Document]]:
+    pass
