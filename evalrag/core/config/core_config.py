@@ -38,6 +38,7 @@ class RagConfig:
     top_k: int = _get("rag.top_k", 5)
     max_context_tokens: int = _get("rag.max_context_tokens", 2000)
     provider_name: str = _get("rag.provider_name", os.getenv("PROVIDER_NAME", "HF"))
+    vector_store_path: str = str(VECTOR_STORE)
     # model_name: str = _get(
     #   "rag.model_name", os.getenv("RAG_MODEL_NAME", "gpt-4.1-mini")
     # )
