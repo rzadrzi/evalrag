@@ -1,9 +1,8 @@
 rag:
   top_k: 5
   max_context_tokens: 1800
-  provider_name: "HF" # HF: HuggingFace, OPENAI: Openai
+  provider: "HF" # HF: HuggingFace, OPENAI: Openai
   # model_name: "gpt-4.1-mini"
-  # embedding_model: "text-embedding-3-large"
 
 eval:
   judge_provider: "HF"
@@ -14,6 +13,5 @@ eval:
   faithfulness_threshold: 3.5
 
 ingestion:
-  # provider_name: "HF"
   default_chunk_size: 900
   default_chunk_overlap: 120
