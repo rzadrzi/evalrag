@@ -124,7 +124,7 @@ class RAG:
             context_block=context_block,
         )
     
-    def answer_question(
+    def generate_answer(
         self,
         question: str,
         source_id: str | None = None,
