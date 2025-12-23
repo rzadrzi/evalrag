@@ -16,3 +16,6 @@ data/*
 .venv
 
 .env
+
+# Actix 
+target/
