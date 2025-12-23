@@ -1,0 +1,9 @@
+services:
+  rag:
+    build:
+      context: contextPath
+      dockerfile: Dockerfile
+  web:
+    build:
+      context: contextPath
+      dockerfile: Dockerfile
