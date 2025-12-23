@@ -182,11 +182,14 @@ class Ingestion:
 
 
 if __name__ == "__main__":
-    from core import load_core_config
-    config = load_core_config().ingestion
+    from pathlib import Path
 
+    from .config import load_core_config
+    config = load_core_config().ingestion
+    print(config)
     ingestion = Ingestion(config=config)
-    ingestion.indexing(filename="./sample.pdf")
+    # path = Path
+    # ingestion.indexing(filename="./sample.pdf")
 
 
 
