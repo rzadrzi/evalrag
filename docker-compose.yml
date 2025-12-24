@@ -1,9 +1,20 @@
 services:
-  rag:
+  api:
     build:
-      context: contextPath
+      context: evalrag
       dockerfile: Dockerfile
-  web:
-    build:
-      context: contextPath
-      dockerfile: Dockerfile
+
+    volumes:
+      - . :/app
+
+    ports:
+      - "8000:8000"
+
+    container_name: rag_api
+
+    env_file:
+      - .env
+  # web:
+  # build:
+  # context: contextPath
+  # dockerfile: Dockerfile
