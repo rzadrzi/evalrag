@@ -1,18 +1,52 @@
-# from core import Ingestion
-# from core import load_core_config
-# from pathlib import Path
+# from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# path  = Path(__file__).resolve().parent / "sample.pdf"
+# model_name = "Qwen/Qwen3-4B-Instruct-2507"
 
-# config = load_core_config().ingestion
+# # load the tokenizer and the model
+# tokenizer = AutoTokenizer.from_pretrained(model_name)
+# model = AutoModelForCausalLM.from_pretrained(
+#     model_name,
+#     torch_dtype="auto",
+#     device_map="auto"
+# )
 
-# ingestion = Ingestion(config=config)
-# ingestion.indexing(filename=str(path))
-# print(config)
-# print(path)
+# # prepare the model input
+# prompt = "Give me a short introduction to large language model."
+# messages = [
+#     {"role": "user", "content": prompt}
+# ]
+# text = tokenizer.apply_chat_template(
+#     messages,
+#     tokenize=False,
+#     add_generation_prompt=True,
+# )
+# model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
-from core import load_core_config, load_prompt_config
+# # conduct text completion
+# generated_ids = model.generate(
+#     **model_inputs,
+#     max_new_tokens=16384
+# )
+# output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist() 
 
-print(load_core_config())
+# content = tokenizer.decode(output_ids, skip_special_tokens=True)
 
-print(load_prompt_config().judge_template)
+# print("content:", content)
+
+
+from sglang.test.doc_patch import launch_server_cmd
+from sglang.utils import wait_for_server, print_highlight, terminate_process
+
+# This is equivalent to running the following command in your terminal
+# python3 -m sglang.launch_server --model-path qwen/qwen2.5-0.5b-instruct --host 0.0.0.0
+
+port = 9000
+
+server_process, port = launch_server_cmd(
+    """
+python3 -m sglang.launch_server --model-path qwen/qwen2.5-0.5b-instruct \
+ --host 0.0.0.0 --log-level warning
+"""
+)
+
+wait_for_server(f"http://localhost:{port}")
