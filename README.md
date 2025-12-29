@@ -136,60 +136,6 @@ project layout
 
 ```text
 evalrag
-├── core/
-│   ├── rag/
-│   │   ├── retriever.py
-│   │   ├── generator.py
-│   │   └── prompts.py
-│   ├── eval/
-│   │   ├── judge.py
-│   │   ├── datasets.py
-│   │   └── metrics.py
-│   ├── ingestion/
-│   │   ├── loaders.py
-│   │   └── chunkers.py
-│   ├── models/          ← pydantic schema
-│   ├── config/
-│   │   └── core_config.py
-│   └── __init__.py      ← (e.g. evalrag_core)
-│
-├── app/
-│   ├── backend/
-│   │   ├── main.py      ← FastAPI entrypoint
-│   │   ├── api/
-│   │   │   ├── routes_rag.py     ← /api/ask
-│   │   │   ├── routes_docs.py    ← /api/documents
-│   │   │   └── routes_eval.py    ← /api/eval/*
-│   │   ├── db/
-│   │   ├── config.py
-│   │   └── dependencies.py
-│   ├── frontend/
-│   │   ├── dashboard/
-│   │   └── ...
-│   └── docker/
-│
-├── configs/
-│   ├── prompts.yaml
-│   ├── core.yaml
-│   └── app.yaml
-├── tests/
-│   ├── test_core_rag.py
-│   ├── test_core_eval.py
-│   └── test_api.py
-├── docker-compose.yml
-└── README.md
-
-```
-
-```text
-.
-├── app
-│   ├── backend
-│   │   ├── Cargo.lock
-│   │   ├── Cargo.toml
-│   │   ├── src
-│   │       └── main.rs
-│   └── frontend
 ├── configs
 │   ├── core.yaml
 │   └── prompt.yaml
@@ -202,13 +148,26 @@ evalrag
 │   │   ├── eval.py
 │   │   ├── ingestion.py
 │   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── config.cpython-312.pyc
+│   │   │   ├── eval.cpython-312.pyc
+│   │   │   ├── ingestion.cpython-312.pyc
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   └── rag.cpython-312.pyc
 │   │   └── rag.py
 │   ├── Dockerfile
 │   ├── __init__.py
-│   ├── main.py
-│   └── requirements.txt
-└── README.md
-
-
+│   ├── __pycache__
+│   │   ├── api.cpython-312.pyc
+│   │   └── __init__.cpython-312.pyc
+│   ├── requirements.txt
+│   └── ui
+│       ├── 0_🤖_index.py
+│       ├── __init__.py
+│       └── pages
+│           └── 1_📈_Evaluation.py
+├── README.md
+└── tests
+    └── __init__.py
 
 ```
