@@ -148,18 +148,9 @@ evalrag
 │   │   ├── eval.py
 │   │   ├── ingestion.py
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── config.cpython-312.pyc
-│   │   │   ├── eval.cpython-312.pyc
-│   │   │   ├── ingestion.cpython-312.pyc
-│   │   │   ├── __init__.cpython-312.pyc
-│   │   │   └── rag.cpython-312.pyc
 │   │   └── rag.py
 │   ├── Dockerfile
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── api.cpython-312.pyc
-│   │   └── __init__.cpython-312.pyc
 │   ├── requirements.txt
 │   └── ui
 │       ├── 0_🤖_index.py
