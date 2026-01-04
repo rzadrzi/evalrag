@@ -162,3 +162,10 @@ evalrag
     └── __init__.py
 
 ```
+
+## RAG Evaluation
+
+### Metrics
+
+- Retrieval Metrics
+- Generation Metics
