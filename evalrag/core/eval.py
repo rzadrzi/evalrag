@@ -19,6 +19,27 @@ Evaluation of RAG system has tow main parts:
 
     
 """
+
+"""
+Steps to evaluate RAG answers:
+    1.  Prepare source documents and index them using a vector database.
+    2. Setup agents(e.g., Mixtral("mistralai/Mixtral-8x7B-Instruct-v0.1")) for question generation, retrieval, and answer generation.
+    3.  Setup critique agents (e.g., GPT-4) for evaluating the generated answers.
+    4.  For each user question:
+        1. Generate sub-questions if needed.
+        2. Retrieve relevant contexts from the vector database.
+        3. Generate answers using the retrieved contexts.
+        4. Evaluate the generated answers using the critique agents.
+
+1. Use a judge model (e.g., GPT-4) to evaluate the generated answer against the question and retrieved contexts.
+2. Define evaluation criteria such as correctness, faithfulness, and relevance.
+3. For each criterion, create prompts that guide the judge model to provide scores and feedback.
+4. Aggregate the scores from different criteria to get an overall evaluation score.
+
+
+"""
+
+
 from typing import List, Dict, Any
 
 
