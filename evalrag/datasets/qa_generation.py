@@ -112,3 +112,4 @@ for sampled_context in tqdm(random.sample(docs_processed, N_GENERATIONS)):
 
 # - Groundedness: can the question be answered from the given context?
 # - Relevance: is the question relevant to users? For instance, "What is the date when transformers 4.29.1 was released?" is not relevant for ML practitioners.
+# - Stand-alone: is the question understandable free of any context, for someone with domain knowledge/Internet access? The opposite of this would be What is the function used in this article? for a question generated from a specific blog article.
